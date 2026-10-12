@@ -2101,10 +2101,14 @@ function trPlay(){if(trLast)playAudioSpeech(trLast.text,trMeta(trLast.lang).code
 
     // 3. Firebase-ஐ Initialize செய்தல்
     const app = initializeApp(firebaseConfig);
-
-    // 4. Firestore மற்றும் Auth-ஐ இயக்குவதற்கான வரிகள்
     const db = getFirestore(app);
     const auth = getAuth(app);
+
+    // 4. உங்கள் goScreen ஃபங்ஷனை இப்படி window-வோடு இணைக்க வேண்டும்:
+    window.goScreen = function(screenName) {
+      // உங்கள் goScreen-க்கான பழைய கோடு இங்கே இருக்கும்
+      console.log("Navigating to: ", screenName);
+    };
 
     console.log("Firebase & Firestore வெற்றிகரமாக இணைக்கப்பட்டது!");
   </script>
