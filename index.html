@@ -2083,23 +2083,30 @@ function trPlay(){if(trLast)playAudioSpeech(trLast.text,trMeta(trLast.lang).code
   appDataset.Korean.letters=koV.concat(koC).map(([c,p,r,s])=>({c,p,r,s}));
   appDataset.Chinese.letters=[['一','யீ','yī'],['二','அர்','èr'],['三','சான்','sān'],['四','ஸ்','sì'],['五','வூ','wǔ'],['六','லியோ','liù'],['七','சீ','qī'],['八','பா','bā'],['九','ஜியோ','jiǔ'],['十','ஷி','shí'],['你','நீ','nǐ'],['好','ஹாவ்','hǎo'],['我','வோ','wǒ'],['是','ஷி','shì'],['人','ரென்','rén']].map(([c,p,r])=>({c,p,r}));
 })();
-  <script>
-  // Ungaloda Firebase Console-la vandha config details-a inga podunga:
-  const firebaseConfig = {
-  apiKey: "AIzaSyCnXWHb6qVUFNx0UaAzPAA-xPWkHEOmUqM",
-  authDomain: "vshadow-learning.firebaseapp.com",
-  projectId: "vshadow-learning",
-  storageBucket: "vshadow-learning.firebasestorage.app",
-  messagingSenderId: "324225630908",
-  appId: "1:324225630908:web:bb194545fccebdeb07c6b9"
-};
+<script type="module">
+    // 1. தேவையான SDK-களை இங்கு Import செய்ய வேண்டும்
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-  // Firebase Initialize
-  if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-  }
-  const db = firebase.firestore();
-  const auth = firebase.auth();
-</script>
+    // 2. உங்கள் Firebase Configuration விவரங்கள்
+    const firebaseConfig = {
+      apiKey: "AIzaSyCnXWHb6qVUFNx0UaAzPAA-xPWkHEOmUqM",
+      authDomain: "vshadow-learning.firebaseapp.com",
+      projectId: "vshadow-learning",
+      storageBucket: "vshadow-learning.firebasestorage.app",
+      messagingSenderId: "324225630908",
+      appId: "1:324225630908:web:bb194545fccebdeb07c6b9"
+    };
+
+    // 3. Firebase-ஐ Initialize செய்தல்
+    const app = initializeApp(firebaseConfig);
+
+    // 4. Firestore மற்றும் Auth-ஐ இயக்குவதற்கான வரிகள்
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+
+    console.log("Firebase & Firestore வெற்றிகரமாக இணைக்கப்பட்டது!");
+  </script>
 </body>
 </html>
