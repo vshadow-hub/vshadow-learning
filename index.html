@@ -2083,6 +2083,7 @@ function trPlay(){if(trLast)playAudioSpeech(trLast.text,trMeta(trLast.lang).code
   appDataset.Korean.letters=koV.concat(koC).map(([c,p,r,s])=>({c,p,r,s}));
   appDataset.Chinese.letters=[['一','யீ','yī'],['二','அர்','èr'],['三','சான்','sān'],['四','ஸ்','sì'],['五','வூ','wǔ'],['六','லியோ','liù'],['七','சீ','qī'],['八','பா','bā'],['九','ஜியோ','jiǔ'],['十','ஷி','shí'],['你','நீ','nǐ'],['好','ஹாவ்','hǎo'],['我','வோ','wǒ'],['是','ஷி','shì'],['人','ரென்','rén']].map(([c,p,r])=>({c,p,r}));
 })();
+</script>
 <script type="module">
     // 1. தேவையான SDK-களை இங்கு Import செய்ய வேண்டும்
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -2103,12 +2104,6 @@ function trPlay(){if(trLast)playAudioSpeech(trLast.text,trMeta(trLast.lang).code
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(app);
-
-    // 4. உங்கள் goScreen ஃபங்ஷனை இப்படி window-வோடு இணைக்க வேண்டும்:
-    window.goScreen = function(screenName) {
-      // உங்கள் goScreen-க்கான பழைய கோடு இங்கே இருக்கும்
-      console.log("Navigating to: ", screenName);
-    };
 
     console.log("Firebase & Firestore வெற்றிகரமாக இணைக்கப்பட்டது!");
   </script>
