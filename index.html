@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="ta">
 <head>
+  <!-- Firebase Core & Features SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>VShadow • Learning Languages</title>
@@ -2079,6 +2083,24 @@ function trPlay(){if(trLast)playAudioSpeech(trLast.text,trMeta(trLast.lang).code
   appDataset.Korean.letters=koV.concat(koC).map(([c,p,r,s])=>({c,p,r,s}));
   appDataset.Chinese.letters=[['一','யீ','yī'],['二','அர்','èr'],['三','சான்','sān'],['四','ஸ்','sì'],['五','வூ','wǔ'],['六','லியோ','liù'],['七','சீ','qī'],['八','பா','bā'],['九','ஜியோ','jiǔ'],['十','ஷி','shí'],['你','நீ','nǐ'],['好','ஹாவ்','hǎo'],['我','வோ','wǒ'],['是','ஷி','shì'],['人','ரென்','rén']].map(([c,p,r])=>({c,p,r}));
 })();
+  <script>
+  // Ungaloda Firebase Console-la vandha config details-a inga podunga:
+  const firebaseConfig = {
+  apiKey: "AIzaSyCnXWHb6qVUFNx0UaAzPAA-xPWkHEOmUqM",
+  authDomain: "vshadow-learning.firebaseapp.com",
+  projectId: "vshadow-learning",
+  storageBucket: "vshadow-learning.firebasestorage.app",
+  messagingSenderId: "324225630908",
+  appId: "1:324225630908:web:bb194545fccebdeb07c6b9"
+};
+
+  // Firebase Initialize
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const db = firebase.firestore();
+  const auth = firebase.auth();
+</script>
 </script>
 </body>
 </html>
